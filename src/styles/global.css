@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Pretendard Variable", "Pretendard", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --color-surface: #0a0a0f;
+  --color-surface-card: #111118;
+  --color-surface-hover: #1a1a24;
+  --color-border-subtle: #1e1e2e;
+  --color-border-default: #2a2a3a;
+  --color-accent: #a78bfa;
+  --color-accent-dim: #7c3aed;
+}

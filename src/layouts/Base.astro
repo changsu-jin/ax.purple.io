@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Purple AX - 기술로 비즈니스 운영을 바꿉니다' } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const navLinks = [
+  { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
+];
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={`${title} | Purple AX`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Purple AX" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <title>{title} | Purple AX</title>
+  </head>
+  <body class="min-h-screen bg-surface text-gray-100 font-sans antialiased">
+    <nav class="border-b border-border-subtle bg-surface/80 backdrop-blur-md sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+        <a href="/" class="text-lg font-bold tracking-tight text-white hover:text-accent transition-colors">
+          Purple AX
+        </a>
+        <!-- Desktop nav -->
+        <div class="hidden sm:flex gap-1">
+          {navLinks.map(({ href, label }) => (
+            <a
+              href={href}
+              class:list={[
+                'text-sm px-3 py-1.5 rounded-lg transition-colors',
+                currentPath.startsWith(href)
+                  ? 'text-white bg-white/5'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5',
+              ]}
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+        <!-- Mobile nav toggle -->
+        <button
+          id="mobile-menu-btn"
+          class="sm:hidden p-2 text-gray-400 hover:text-white transition-colors"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden sm:hidden border-t border-border-subtle">
+        <div class="max-w-6xl mx-auto px-6 py-3 flex flex-col gap-1">
+          {navLinks.map(({ href, label }) => (
+            <a
+              href={href}
+              class:list={[
+                'text-sm px-3 py-2 rounded-lg transition-colors',
+                currentPath.startsWith(href)
+                  ? 'text-white bg-white/5'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5',
+              ]}
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="border-t border-border-subtle mt-24">
+      <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span class="text-sm text-gray-500">&copy; {new Date().getFullYear()} Purple AX &mdash; purpleio</span>
+        <div class="flex gap-6 text-xs text-gray-600">
+          {navLinks.map(({ href, label }) => (
+            <a href={href} class="hover:text-gray-400 transition-colors">{label}</a>
+          ))}
+          <a href="https://purple.io" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400 transition-colors">purple.io</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+    </script>
+  </body>
+</html>
