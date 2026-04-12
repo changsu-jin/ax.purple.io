@@ -11,7 +11,7 @@ owner:
   avatar: /avatars/jin-changsu.png
   blog: https://42class.com
 contributors:
-  - name: 김재헌
+  - name: 이재헌
   - name: 박진표
 ---
 
