@@ -7,7 +7,7 @@ const projects = defineCollection({
     title: z.string(),
     summary: z.string(),
     status: z.enum(['기획 중', '진행 중', '운영 중']),
-    category: z.enum(['internal', 'opensource']).default('internal'),
+    category: z.enum(['internal', 'opensource', 'external']).default('internal'),
     tags: z.array(z.string()),
     approach: z.string().optional(),
     repo: z.string().optional(),
