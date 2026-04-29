@@ -1,6 +1,6 @@
 ---
-title: Chatbot (가칭)
-summary: 운영 문의 대응 자동화. 반복적인 내부 문의를 AI 챗봇이 직접 답변하고, NL2SQL로 데이터 조회까지 처리합니다.
+title: Purple Desk
+summary: 사내 문의·데이터 조회 1차 응대 자동화 (구 Chatbot). 반복적인 내부 문의를 AI 에이전트가 직접 답변하고, NL2SQL로 데이터 조회까지 처리합니다.
 status: 진행 중
 category: internal
 tags: [AI, Chatbot, RAG, NL2SQL]

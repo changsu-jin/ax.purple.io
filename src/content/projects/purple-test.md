@@ -1,6 +1,6 @@
 ---
-title: E2E (가칭)
-summary: No-Code 웹 UI, 자연어 AI, 그리고 데스크톱 에이전트로 시나리오를 만들고, 자동으로 돌리고, 실패하면 원인까지 짚어주는 E2E 테스트 자동화 플랫폼.
+title: Purple Test
+summary: 구 E2E. No-Code 웹 UI, 자연어 AI, 그리고 데스크톱 에이전트로 시나리오를 만들고, 자동으로 돌리고, 실패하면 원인까지 짚어주는 E2E 테스트 자동화 플랫폼.
 status: 진행 중
 category: internal
 tags: [Playwright, Next.js, Electron, No-Code, AI, MCP]

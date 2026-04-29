@@ -1,6 +1,6 @@
 ---
-title: Talos (가칭)
-summary: AI 기반 개발 자동화 파이프라인. 현업 요청부터 설계, 구현, 테스트, 배포까지 AI 에이전트가 수행합니다.
+title: Purple Pipeline
+summary: 현업 요청 → 분석 → 개발 → 배포까지 자동 처리 (구 Talos). AI Agent Harness 기반으로 사람은 검토·승인만 합니다.
 status: 진행 중
 category: internal
 tags: [AI Agent, RPIV, BDD, DevOps, MCP]
