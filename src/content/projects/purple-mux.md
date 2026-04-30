@@ -1,7 +1,7 @@
 ---
 title: Purple Mux
 summary: 웹 기반 터미널 + Claude Code 통합 환경. 실시간 AI 상태 모니터링과 업무 도구 통합을 지원합니다.
-status: 진행 중
+status: 운영 중
 category: opensource
 tags: [Terminal, Claude Code, Web UI, Tailscale]
 approach: 기본 터미널을 웹 기반으로 대체하여, AI 작업 모니터링과 업무 도구를 하나의 인터페이스로 통합하는 접근
